@@ -1,3 +1,5 @@
+# MicroPython MANUAL HW LAB — buzzer melody sketch only.
+# NOT a cooler firmware test (see main.py HardwareManager for product audio UI).
 from machine import Pin, PWM
 import time
 

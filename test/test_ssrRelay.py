@@ -1,4 +1,7 @@
-# ==================== MicroPython ====================
+# ==================== MicroPython (MANUAL HW LAB) ====================
+# NOT part of RFID-Cooler product tests.
+# NOT a cooler dry-switch / Off-Slow-Fast validation script.
+# Legacy solenoid/lock pulse experiment on GPIO16 SSR.
 # برای ESP32 / ESP8266 / Raspberry Pi Pico
 # ماژول SSR: A03B 5V 1-Channel (Active Low + AC-only)
 # بار: قفل زنجیری ۱۲ ولت DC (solenoid فنردار)

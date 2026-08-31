@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Static validation (syntax, config, docs, contracts)
+        run: python scripts/validate.py
+      - name: Host unit & smoke tests (stubbed MicroPython)
+        run: python scripts/run_tests.py
+      - name: WebSocket integration (CloudBridge E2E)
+        run: |
+          pip install -r requirements-dev.txt
+          python scripts/integration/run_integration.py
+
+  readme-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required docs exist
+        run: |
+          set -e
+          for f in README.md README.fa.md LICENSE CONTRIBUTING.md SECURITY.md INSTALL.md \
+                   docs/README.md docs/OTA.md docs/IRAN_MIRRORS.md docs/PRODUCT_ROADMAP_RESILIENCE.md \
+                   docs/HARDWARE_BENCH.md \
+                   assets/logo.svg assets/logo-3d.png; do
+            test -f "$f" || { echo "missing $f"; exit 1; }
+          done
+          echo "All required paths present."

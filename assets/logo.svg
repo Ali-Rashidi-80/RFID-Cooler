@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="RFID Cooler">
+  <defs>
+    <linearGradient id="rc-core" x1="96" y1="88" x2="416" y2="424" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B3D4A"/>
+      <stop offset="0.45" stop-color="#147A8A"/>
+      <stop offset="1" stop-color="#3ECFB2"/>
+    </linearGradient>
+    <linearGradient id="rc-wave" x1="120" y1="160" x2="392" y2="352" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#147A8A"/>
+      <stop offset="1" stop-color="#3ECFB2"/>
+    </linearGradient>
+    <radialGradient id="rc-halo" cx="256" cy="256" r="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3ECFB2" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#3ECFB2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Frame -->
+  <path fill="#070D11"
+        d="M 136 64 H 368 L 448 144 V 376 Q 448 448 376 448 H 136 Q 64 448 64 376 V 136 Q 64 64 136 64 Z"/>
+  <path fill="none" stroke="#147A8A" stroke-opacity="0.35" stroke-width="2"
+        d="M 136 64 H 368 L 448 144 V 376 Q 448 448 376 448 H 136 Q 64 448 64 376 V 136 Q 64 64 136 64 Z"/>
+  <path fill="none" stroke="#3ECFB2" stroke-opacity="0.8" stroke-width="2.5" stroke-linecap="square"
+        d="M 368 64 H 448 V 144"/>
+
+  <circle cx="256" cy="256" r="200" fill="url(#rc-halo)"/>
+
+  <!-- Cooler body -->
+  <rect x="168" y="168" width="176" height="176" rx="18" fill="url(#rc-core)"/>
+  <rect x="188" y="188" width="136" height="24" rx="6" fill="#070D11" fill-opacity="0.35"/>
+  <rect x="188" y="224" width="136" height="24" rx="6" fill="#070D11" fill-opacity="0.28"/>
+  <rect x="188" y="260" width="136" height="24" rx="6" fill="#070D11" fill-opacity="0.22"/>
+
+  <!-- RFID waves -->
+  <g fill="none" stroke="url(#rc-wave)" stroke-width="7" stroke-linecap="round">
+    <path d="M 256 112 C 196 112 152 156 152 216"/>
+    <path d="M 256 96 C 184 96 128 152 128 232"/>
+    <path d="M 256 80 C 172 80 104 148 104 248"/>
+  </g>
+  <circle cx="256" cy="112" r="10" fill="#3ECFB2"/>
+
+  <!-- Dual relay nodes (SSR + mechanical) -->
+  <circle cx="332" cy="332" r="14" fill="#3ECFB2"/>
+  <circle cx="332" cy="332" r="22" fill="none" stroke="#3ECFB2" stroke-opacity="0.55" stroke-width="3"/>
+  <circle cx="180" cy="332" r="14" fill="#147A8A"/>
+  <circle cx="180" cy="332" r="22" fill="none" stroke="#147A8A" stroke-opacity="0.55" stroke-width="3"/>
+  <line x1="194" y1="332" x2="318" y2="332" stroke="#3ECFB2" stroke-opacity="0.45" stroke-width="3" stroke-dasharray="8 6"/>
+
+  <!-- State dots: Off / Slow / Fast -->
+  <g fill="#3ECFB2">
+    <circle cx="220" cy="372" r="6" fill-opacity="0.35"/>
+    <circle cx="256" cy="372" r="6" fill-opacity="0.65"/>
+    <circle cx="292" cy="372" r="6"/>
+  </g>
+</svg>

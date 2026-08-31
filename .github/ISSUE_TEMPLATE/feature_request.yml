@@ -1,0 +1,42 @@
+name: Feature request
+description: Suggest a product or firmware improvement
+title: "[feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: Who needs this and in what environment (Iran offline, B2B fleet, etc.)?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Resilience layer
+      options:
+        - Layer 0 — RFID / dry-switch (core)
+        - Layer 1 — LAN / SoftAP / wall / RF433
+        - Layer 2 — BLE / SMS
+        - Layer 3 — Cloud / MQTT / OTA
+        - Docs / CI only
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety checks
+      options:
+        - label: Does not bypass dry-switch or move mechanical relay under load
+          required: true
+        - label: Offline RFID still works if this feature fails
+          required: true

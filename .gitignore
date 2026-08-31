@@ -1,24 +1,66 @@
-# Text files
-*.txt
-*.text
-
-# Word documents
-*.doc
-*.docx
-*.docm
-*.dot
-*.dotx
-
-# Optional: temporary Word files
-~$*.doc*
-
-
-# docs/*.txt
-# docs/*.doc
-# docs/*.docx
-# docs/*.docm
-
-
-
+# ── Local sandbox / design dumps ──────────────────────────────────────────
 0/
-#test/
+
+# ── Device secrets & runtime state (never commit) ─────────────────────────
+config.json
+cards.json
+cards.tmp
+outbox.jsonl
+outbox.bak
+outbox.jsonl.bak
+rf_codes.json
+rf_codes.tmp
+
+# ── Environment ───────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.Python
+*.egg-info/
+dist/
+build/
+
+# ── MicroPython / ESP32 tooling ───────────────────────────────────────────
+*.mpy
+.micropico/
+.mpy_cross/
+Thonny/
+.thonny/
+
+# ── IDE / editor ────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS junk ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Logs & temp ─────────────────────────────────────────────────────────────
+*.log
+*.tmp
+*.bak
+
+# ── Cursor local plans (keep rules if added later) ─────────────────────────
+.cursor/plans/
+
+# ── Local Word / note dumps (root only — do not block repo docs) ───────────
+/*.txt
+!requirements-dev.txt
+/*.text
+/*.doc
+/*.docx
+/*.docm
+/*.dot
+/*.dotx
+~$*.doc*

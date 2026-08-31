@@ -1,0 +1,2 @@
+# Optional — host integration / bench tooling only (not flashed to ESP32)
+websockets>=12.0
